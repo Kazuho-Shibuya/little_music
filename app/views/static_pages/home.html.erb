@@ -1,7 +1,24 @@
 <% provide(:title, "HOME") %>
-<div class="center jumbotron">
-  <h1>未知の音楽領域へ</h1>
-  <h2>あなただけの音楽を探しに行きませんか？</h2>
-  <%= link_to "GO!!!!!!!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
-<%= link_to image_tag("IMG_6044.JPG", alt: "top photo") %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>未知の音楽領域へ</h1>
+    <h2>あなただけの音楽を探しに行きませんか？</h2>
+    <%= link_to "GO!!!!!!!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  <%= link_to image_tag("IMG_6044.JPG", alt: "top photo") %>
+<% end %>
