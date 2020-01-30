@@ -4,8 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 gem 'bootstrap-sass', '3.4.1'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'carrierwave',             '1.2.2'
 gem 'faker', '1.7.3'
 gem 'jquery-rails', '4.3.1'
+gem 'mini_magick', '4.7.0'
 gem 'will_paginate', '3.1.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -61,6 +63,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'fog', '1.42'
+  gem 'pg',  '0.20.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
