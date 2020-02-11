@@ -14,7 +14,9 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 section {
@@ -43,6 +45,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: white;
 }
 
 h2 {
@@ -51,7 +54,8 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  // color: $gray-light;
+  color: white;
 }
 
 p {
@@ -75,6 +79,11 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.header-container {
+  margin: 0;
+  padding: 0;
 }
 
 /* footer */
@@ -273,4 +282,28 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+// 画像設定
+.photo-background {
+  background-image:  image-url("IMG_6044.JPG");
+  background-size:  cover;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
